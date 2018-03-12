@@ -1,0 +1,24 @@
+﻿<Window x:Class="FussballTippsspielWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FussballTippsspielWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid x:Name="Header" Background="#918FA8" Margin="0,0,0,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="517">
+            <Label Content="Tippspiel" FontSize="18"/>
+            <StackPanel VerticalAlignment="Bottom">
+                <Menu VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Background="#989db2">
+                    <MenuItem Header="_AddPlayer" FontSize="12"/>
+                    <MenuItem Header="_Statistik" FontSize="12"/>
+                </Menu>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="AddPlayer" HorizontalAlignment="Left" Margin="0,50,0,0" Width="517" Background="#98abb2">
+
+        </Grid>
+
+    </Grid>
+</Window>
