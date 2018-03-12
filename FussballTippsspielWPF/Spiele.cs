@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace FussballTippsspielWPF
 {
@@ -22,8 +23,8 @@ namespace FussballTippsspielWPF
         public Team2 Team2 { get; set; }
         public DateTime LastUpdateDateTime { get; set; }
         public bool MatchIsFinished { get; set; }
-        public Matchresult[] MatchResults { get; set; }
-        public Goal[] Goals { get; set; }
+        public List<Matchresult> MatchResults { get; set; }
+        public List<Goal> Goals { get; set; }
         public Location Location { get; set; }
         public int? NumberOfViewers { get; set; }
     }

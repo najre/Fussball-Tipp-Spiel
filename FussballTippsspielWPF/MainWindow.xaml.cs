@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using Newtonsoft.Json;
+using System.Web.Script.Serialization;
+
 
 namespace FussballTippsspielWPF
 {
@@ -14,14 +16,20 @@ namespace FussballTippsspielWPF
             InitializeComponent();
             Json json = new Json();
             string uebergabeJson = json.JsonRunterladen("26");
-            List<Spiele> spiele = DeserializeAccount(uebergabeJson);
-            MessageBox.Show("");
+            List<Spiele> lp = k(uebergabeJson);
+            string p = ""; 
+
+
+
         }
 
-        public List<Spiele> DeserializeAccount(string json)
+
+        public List<Spiele> k(string json)
         {
-            return JsonConvert.DeserializeObject<List<Spiele>>(json);
+            List<Spiele> example2Model = (List<Spiele>)new JavaScriptSerializer().Deserialize(json,typeof( List<Spiele>));
+            return example2Model;
         }
+
 
 
 
