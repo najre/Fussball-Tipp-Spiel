@@ -6,7 +6,7 @@ namespace FussballTippsspielWPF
 
     public class Spiele
     {
-        public Class1[] Property1 { get; set; }
+        public Class1 Property1 { get; set; }
     }
 
     public class Class1

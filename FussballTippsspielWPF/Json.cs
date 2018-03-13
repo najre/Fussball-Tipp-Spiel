@@ -14,6 +14,7 @@ namespace FussballTippsspielWPF
     {
         public string JsonRunterladen(string woche)
         {
+            string jsonString = "";
             string path2 = @"C:\Users\jan\Documents\Bundesliga_Ergebnisse\" + woche + ".json";
             string path = "https://www.openligadb.de/api/getmatchdata/bl1/2017/" + woche;
             if (!File.Exists(path2))
@@ -24,15 +25,12 @@ namespace FussballTippsspielWPF
                 }
                 WebClient Client = new WebClient();
                 Client.DownloadFile(path, @"C:\Users\jan\Documents\Bundesliga_Ergebnisse\" + woche + ".json");
-                string jsonString = GetJsonToString(path2, woche);
+                jsonString = GetJsonToString(path2, woche);
                 JToken parsedJson = JToken.Parse(jsonString);
-                var beautifiedJson = parsedJson.ToString(Newtonsoft.Json.Formatting.Indented);
-                WriteJson(beautifiedJson, woche);
-                
+                WriteJson(parsedJson, woche);                
             }
-            string readJson = ReadJson(woche);
-
-            return readJson;
+            return jsonString;
+            
         }
 
 
@@ -48,12 +46,7 @@ namespace FussballTippsspielWPF
             return jsonString;
         }
 
-        private string ReadJson(string woche)
-        {
-            string st = File.ReadAllText(@"C:\Users\jan\Documents\Bundesliga_Ergebnisse\" + woche + ".json");
-            return st;
 
-        }
         private void WriteJson(string jsonString, string woche)
         {
             
